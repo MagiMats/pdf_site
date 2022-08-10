@@ -7,6 +7,10 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm):
         model = CustomUser
         fields = UserCreationForm.Meta.fields + ('email',)
+        widgets = {
+            'email': forms.TextInput(attrs={'type': 'text'}),
+        }
+
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
