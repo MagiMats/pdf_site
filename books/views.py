@@ -15,7 +15,7 @@ def AddBookView(request):
             file = form.cleaned_data['file']
             book = Book.objects.create(file = file, name=name, owner = CustomUser.objects.get(id=request.user.id))
 
-            return render(request, 'succes.html')
+            return render(request, 'succes.html', {'book': name})
         else:
             field_errors = [(field.label, field.errors) for field in form]
             print(field_errors)

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Upload Succesful!</h1>
+    <h1>Succes!</h1>
+    {% if book %}
+    <div>You uploaded: {{book}}</div>
+    {% endif %}
 {% endblock content %}
