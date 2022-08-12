@@ -13,7 +13,7 @@
             {% if user.is_authenticated %}
                 Hi {{ user.username }}
                 <a href="{% url 'logout' %}">Log Out</a>
-                <a href="{% url 'books/upload' %}">Upload Book</a>
+                <a href="{% url 'add_book' %}">Upload Book</a>
             {% else %}
             <div style="font-size: 20px;">                
                 <strong>You are not logged in!</strong>

@@ -2,6 +2,7 @@ from django.db import models
 from users.models import CustomUser
 
 from django.core.validators import MaxValueValidator, MinValueValidator
+
 # Create your models here.
 class Book(models.Model):
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
