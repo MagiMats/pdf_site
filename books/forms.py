@@ -6,3 +6,8 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = ['name', 'file']
+
+class AdminBookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ['owner','name', 'file']

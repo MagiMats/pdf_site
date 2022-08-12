@@ -1,13 +1,13 @@
 from django.contrib import admin
 from .models import Book
-from .forms import BookForm
+from .forms import AdminBookForm
 
 # Register your models here.
 
 class BookAdmin(admin.ModelAdmin):
-    form = BookForm
+    form = AdminBookForm
     model = Book
 
-admin.site.register(Book)
+admin.site.register(Book, BookAdmin)
 
 
