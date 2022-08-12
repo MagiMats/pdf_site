@@ -2,8 +2,6 @@ from socket import fromshare
 from django import forms
 from .models import Book
 
-from django.forms import inlineformset_factory
-
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
@@ -14,8 +12,3 @@ class AdminBookForm(forms.ModelForm):
         model = Book
         fields = ['owner','name', 'file']
 
-class BookUserInlineFormset = inlineformset_factory (
-    Book,
-    CustomUser,
-    form =
-)

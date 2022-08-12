@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method="post">    {% csrf_token %}
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
 
         <h3>Please upload your book</h3>
         {{form.as_p}}
