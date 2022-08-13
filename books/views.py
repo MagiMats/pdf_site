@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.urls import reverse_lazy
+from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
 
 from .forms import BookForm
 
@@ -22,3 +23,16 @@ def AddBookView(request):
     else:
         form = BookForm()
     return render(request, 'add_book.html', {'form': form})
+
+@login_required
+def BookList(request):
+    user = request.user
+    books = Book.objects.filter(owner = CustomUser.objects.get(id=request.user.id))
+    return render(request, 'book_list.html', {'user': user, 'books': books})
+
+
+def BookDetail(request, book_id):
+    book_file = Book.objects.get(id=book_id)
+    print(book_file.file)
+    return render(request, 'book_detail.html', {'book_file': book_file.file})
+
