@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    
-    <embed src="media/pdf/{{book_file}}" type="application/pdf"    
-    frameBorder="0"
-    scrolling="auto"
-    height="200%"
-    width="100%"
->
+    <ul>
+    {% for item in toc %}
+        <li>item</li>
+    {% endfor%}
+    </ul>
+    <div class="pdf_display">
+        <embed src="{% get_media_prefix %}{{book_file}}" type="application/pdf"    
+        frameBorder="0"
+        scrolling="auto"
+        height="1000vw"
+        width="80%"
+        >
+    </div>
 {% endblock content %}

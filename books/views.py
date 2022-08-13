@@ -7,6 +7,7 @@ from .forms import BookForm
 from .models import Book
 from users.models import CustomUser 
 
+import fitz 
 # Create your views here.
 def AddBookView(request):
     if request.method == 'POST':    
@@ -31,8 +32,9 @@ def BookList(request):
     books = Book.objects.filter(owner = CustomUser.objects.get(id=request.user.id))
     return render(request, 'book_list.html', {'user': user, 'books': books})
 
-
 def BookDetail(request, book_id):
     book_file = Book.objects.get(id=book_id)
-    return render(request, 'book_detail.html', {'book_file': book_file.file})
+    book = fitz.open(book_file)
+    toc = book.get_toc()
+    return render(request, 'book_detail.html', {'book_file': book_file.file, 'toc': toc})
 
