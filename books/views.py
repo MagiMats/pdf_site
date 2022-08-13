@@ -34,7 +34,7 @@ def BookList(request):
 
 def BookDetail(request, book_id):
     book_file = Book.objects.get(id=book_id)
-    book = fitz.open(book_file)
+    book = fitz.open(book_file.file)
     toc = book.get_toc()
     return render(request, 'book_detail.html', {'book_file': book_file.file, 'toc': toc})
 

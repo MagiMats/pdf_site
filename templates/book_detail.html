@@ -1,17 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
+<form>
+<div class="progress_bar">
+    <div id="progress"></div>
+</div>
+
+<div class="grid_item table_of_contents">
     <ul>
     {% for item in toc %}
-        <li>item</li>
+        {% if item.0 != 1 %}
+        <ul>
+            {% if item.0 != 2 %}
+                <ul><li  class="toc_item"><input type="checkbox" id="checkbox3">{{item.1}}</input></li></ul> <!--If an item is not 1 and not 2 add 2 indentations-->
+            {% else %}
+                <li  class="toc_item"><input type="checkbox" id="checkbox2">{{item.1}}</input></li> <!--Item is not one so it's 2 -->
+            {% endif %}
+        </ul>
+        
+        {% else %}
+            <li  class="toc_item head_toc_item"><input type="checkbox" id="checkbox1" onclick="UpdateProgress()">{{item.1}}</input></li>
+        {% endif %}
+
     {% endfor%}
     </ul>
-    <div class="pdf_display">
-        <embed src="{% get_media_prefix %}{{book_file}}" type="application/pdf"    
-        frameBorder="0"
-        scrolling="auto"
-        height="1000vw"
-        width="80%"
-        >
-    </div>
+</div>
+</form>
+
+<div class="pdf_display grid_item">
+    <embed src="{% get_media_prefix %}{{book_file}}" type="application/pdf"    
+    frameBorder="0"
+    scrolling="auto"
+    height="1000vw"
+    width="80%"
+    >
+</div>
+
 {% endblock content %}
