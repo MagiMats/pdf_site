@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import AddBookView, BookDetail, BookList
 from django.views.generic.base import TemplateView
-from django.http import HttpResponse
 
 urlpatterns = [
     path('upload', AddBookView, name='add_book'),

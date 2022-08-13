@@ -14,6 +14,7 @@ def AddBookView(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             file = form.cleaned_data['file']
+            
             book = Book.objects.create(file = file, name=name, owner = CustomUser.objects.get(id=request.user.id))
 
             return render(request, 'succes.html', {'book': name})
@@ -33,6 +34,5 @@ def BookList(request):
 
 def BookDetail(request, book_id):
     book_file = Book.objects.get(id=book_id)
-    print(book_file.file)
     return render(request, 'book_detail.html', {'book_file': book_file.file})
 
