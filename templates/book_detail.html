@@ -3,6 +3,7 @@
 
 {% block content %}
 <form>
+<div class="book_detail">
 <div class="progress_bar">
     <div id="progress"></div>
 </div>
@@ -22,9 +23,9 @@
         {% else %}
             <li  class="toc_item head_toc_item"><input type="checkbox" id="checkbox1" onclick="UpdateProgress()">{{item.1}}</input></li>
         {% endif %}
-
     {% endfor%}
     </ul>
+</div>
 </div>
 </form>
 

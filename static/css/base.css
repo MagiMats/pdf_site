@@ -3,7 +3,6 @@
     font-size: 30px;
 }
 
-
 a {
     text-decoration: none;
     color: rgb(117, 131, 255);
@@ -18,12 +17,6 @@ body, button, input
     color: rgb(117, 131, 255);
     background-color: rgb(248, 248, 210);
     font-family:Verdana, Geneva, Tahoma, sans-serif
-}
-
-.content{
-    display: grid;
-    grid-template-rows: 20vh;
-    grid-template-columns: 20vw 80vw;
 }
 
 .head_toc_item{
@@ -71,3 +64,20 @@ ul{
     height: 30px;
     background-color: green;
 }
+
+.book_detail{
+    display: grid;
+    grid-template-rows: 20vh;
+    grid-template-columns: 20vw 80vw;
+}
+
+.upload_book, .upload_button {
+    border: solid 4px rgb(117, 129, 236) ;
+    background-color:rgb(255, 255, 255) ;
+    padding:5px;
+    border-radius: 5px;
+}
+.upload_book:hover, .upload_button:hover{
+    background-color:rgb(253, 213, 102) ;
+}
+

@@ -10,7 +10,6 @@ function UpdateProgress() {
     var progressbar = document.getElementById("progress")
     if (checkbox1.checked == true) {
         progressbar.style.width = i + "%";
-       
         i += 1
     }
 }   
