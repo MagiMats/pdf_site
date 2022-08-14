@@ -14,14 +14,14 @@
         {% if item.0 != 1 %}
         <ul>
             {% if item.0 != 2 %}
-                <ul><li  class="toc_item"><input type="checkbox" id="checkbox3">{{item.1}}</input></li></ul> <!--If an item is not 1 and not 2 add 2 indentations-->
+                <ul><li><input type="checkbox">{{item.1}}</input></li></ul> <!--If an item is not 1 and not 2 add 2 indentations-->
             {% else %}
-                <li  class="toc_item"><input type="checkbox" id="checkbox2">{{item.1}}</input></li> <!--Item is not one so it's 2 -->
+                <li><input type="checkbox">{{item.1}}</input></li> <!--Item is not one so it's 2 -->
             {% endif %}
         </ul>
         
         {% else %}
-            <li  class="toc_item head_toc_item"><input type="checkbox" id="checkbox1" onclick="UpdateProgress()">{{item.1}}</input></li>
+            <li><input type="checkbox" onclick="UpdateProgress()">{{item.1}}</input></li>
         {% endif %}
     {% endfor%}
     </ul>
@@ -29,7 +29,7 @@
 </div>
 </form>
 
-<div class="pdf_display grid_item">
+<div>
     <embed src="{% get_media_prefix %}{{book_file}}" type="application/pdf"    
     frameBorder="0"
     scrolling="auto"

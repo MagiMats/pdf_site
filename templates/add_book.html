@@ -4,10 +4,11 @@
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
 
         <h3>Please upload your book</h3>
-        <div>{{form.name.label}} {{form.name.name}}</div>
+        <div>{{form.name.label}} {{form.name}}</div>
         <p>{{form.name.errors}}</p>
-        <div></div>
-        <input type="submit" value="submit" class="upload_button">
+        <div>{{form.file.label}} {{form.file}}</div>
+        <p>{{form.file.errors}}</p>
+        <input type="submit" value="submit">
         
     </form>
 {% endblock content %}

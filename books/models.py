@@ -20,3 +20,5 @@ class Book(models.Model):
     file = models.FileField(upload_to="media/pdf/")
     #The link to the actual field where the file is located
 
+    
+
