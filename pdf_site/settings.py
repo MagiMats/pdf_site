@@ -30,10 +30,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
 
     'books',
-    'tailwind',
-    'pdf_site_tw_theme'
 ]
-TAILWIND_APP_NAME = "pdf_site_tw_theme"
 
 INTERNAL_IPS = [
     "127.0.0.1",

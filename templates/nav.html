@@ -1,0 +1,19 @@
+{% block nav %}
+    <nav>
+        <ul class="nav__links">
+        {% if user.is_authenticated %}
+
+            <li><a href="{% url 'home' %}" class="home_link">HomePage</a></li>
+            <li><a href="{% url 'add_book' %}" class="add_book_link">Add Book</a></li>
+            <li><a href="{% url 'book_list' %}" class="books_link">Books</a></li>
+        </ul>
+
+            <li class="right"><a href="{% url 'logout' %}" class="logout_link">Log Out</a></li>
+            
+        {% else %}
+            <a href="{% url 'signup' %}">Sign Up</a>
+            <a href="{% url 'login' %}">Sign In</a>
+        {% endif %}
+    </nav>
+    <hr>
+{% endblock nav %}

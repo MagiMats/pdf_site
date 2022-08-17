@@ -1,0 +1,19 @@
+@counter-style book {
+    system: cyclic;
+    symbols: "\1F4D6";
+    suffix: " ";
+}
+
+h1, .book_list {
+    display: flex;
+    align-content: stretch;
+    padding: 4%;
+}
+
+h1 {
+    justify-content: center;
+}
+
+.book_list {
+    list-style-type: book;
+}

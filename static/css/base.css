@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    background-color: #24252A;
+    color: #edf0f1;
+}
+
+li, a, button {
+    font-weight: 500;
+    font-size: 18px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10px;
+    list-style: none;
+}
+
+.nav__links li, .right {
+    display: inline-block;
+    padding:0px 20px;
+}
+
+.nav__links li a, .logout_link{
+    transition: all 0.3s ease 0s;  
+}
+
+.nav__links li a:hover, .logout_link:hover {
+    color: blue;    
+}
+
+
+
+
