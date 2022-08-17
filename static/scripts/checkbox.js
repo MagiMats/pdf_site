@@ -1,15 +1,33 @@
-const checkbox1 = document.getElementById("checkbox1")
-const checkbox2 = document.getElementById("checkbox2")
-const checkbox3 = document.getElementById("checkbox3")
+const checkbox = document.getElementsByTagName("input")
+var i = 0;
 
-var progress = 0;
+function UpdateProgress(item, increment) {
+    var progressbar = document.getElementById("progress");
+    
+    localStorage.setItem(1, checkbox.checked);
+    console.log(localStorage);
 
-var i = 2;
+    if (item.checked) {
+        i++;
+        progressbar.style.width = i*increment*100 + "%";
 
-function UpdateProgress() {
-    var progressbar = document.getElementById("progress")
-    if (checkbox1.checked == true) {
-        progressbar.style.width = i + "%";
-        i += 1
+    } else {
+        i--;
+        progressbar.style.width = i*increment*100 + "%";
     }
 }   
+
+function load() {
+    for (check in checkbox) {
+        try{
+            var checked = JSON.parse(localStorage.getItem(check.innerHTML));
+            console.log(checked);
+        } catch {
+            console.log(check);
+        }
+        try {document.getElementById(check).checked = checked;}
+        catch{}
+    }
+}
+
+load();

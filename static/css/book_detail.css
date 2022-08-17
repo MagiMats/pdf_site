@@ -1,0 +1,52 @@
+input[type="checkbox"]{
+    margin-right:10px;
+}
+.content {
+    display: grid;
+    grid-template-columns: 20vw 70vw;
+    grid-template-rows: 5vh 115vh;
+    grid-gap: 2%;
+    padding: 2%;
+}
+
+.progress_bar {
+    grid-row: 1;
+    grid-column: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    border: solid 0.5px #edf0f1;
+
+}
+
+#progress {
+    background-color: #edf0f1;
+    width: 0%;
+    height:100%;
+}
+
+.table_of_contents {
+    overflow: scroll;
+    grid-row: 2;
+    grid-column: 1;
+    line-height: 2rem;
+
+}
+
+.pdf_display {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+embed {
+    width: 70vw;
+    height:115vh;    
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-right:4px;
+}

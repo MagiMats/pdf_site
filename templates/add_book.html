@@ -1,14 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css\add_book.css' %}">
+{% endblock %}
 
 {% block content %}
-    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <form method="post" enctype="multipart/form-data" class="upload_form">{% csrf_token %}
 
-        <h3>Please upload your book</h3>
-        <div>{{form.name.label}} {{form.name}}</div>
-        <p>{{form.name.errors}}</p>
-        <div>{{form.file.label}} {{form.file}}</div>
-        <p>{{form.file.errors}}</p>
-        <input type="submit" value="submit">
+        <h3 class="title">Upload A Book</h3>
+        <div class="center">
+            <div class="form_part"><label>{{form.name.label}}</label> {{form.name}}</div>
+
+            <p>{{form.name.errors}}</p>
+
+            <div class="form_part"><label>{{form.file.label}}</label> {{form.file}}</div>
+            <input type="button" onclick="document.getElementById('id_file').click();" value="Upload File" class="file_upload">
+
+            <p>{{form.file.errors}}</p>
+
+            <input type="submit" value="submit">    
+        </div>
         
     </form>
 {% endblock content %}
