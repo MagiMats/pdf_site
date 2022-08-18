@@ -37,7 +37,7 @@ def BookDetail(request, book_id):
     book = fitz.open(book_file.file)
     toc = book.get_toc()
     
-    print(len(toc))
+    json_toc = json.dumps(toc)
     increment = 1/len(toc)
-    return render(request, 'book_detail.html', {'book_file': book_file.file, 'toc': toc, 'increment': increment})
+    return render(request, 'book_detail.html', {'book_file': book_file.file, 'toc': toc, 'json_toc': json_toc, 'increment': increment})
 
