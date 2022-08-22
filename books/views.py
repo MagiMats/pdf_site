@@ -38,6 +38,10 @@ def BookDetail(request, book_id):
     toc = book.get_toc()
     
     json_toc = json.dumps(toc)
-    increment = 1/len(toc)
+    try:
+        increment = 1/len(toc)
+    except:
+        increment = 1000
+        print('No Adonisssssssssss')
     return render(request, 'book_detail.html', {'book_file': book_file.file, 'toc': toc, 'json_toc': json_toc, 'increment': increment})
 
